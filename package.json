@@ -1,7 +1,7 @@
 {
   "name": "wcc-coin",
   "version": "1.0.0",
-  "description": "",
+  "description": "wcc-coin is an Ethereum smart contract written according to ERC20, and it is also a blockchain cryptocurrency called WCC.",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
