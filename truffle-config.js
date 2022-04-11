@@ -30,6 +30,8 @@ const private_keys = [
     env.WCC_TEST_ACCOUNT_PRIVATE_KEY_B,
 ];
 
+const private_keys_mainNet = [ env.WCC_MAIN_ACCOUNT_PRIVATE_KEY_A ];
+
 module.exports = {
     /**
      * Networks define how you connect to your ethereum client and let you set the
@@ -85,6 +87,18 @@ module.exports = {
             timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
             skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
         },
+
+        mainnet: {
+            provider: () =>
+            new HDWalletProvider({
+                privateKeys: private_keys_mainNet,
+                providerOrUrl: env.WCC_API_INFURA_MAINNET,
+                numberOfAddresses: 1,
+            }),
+            network_id: 1, // Mainnet's id
+            gas: 5500000, // Mainnet 
+        },
+
         // Useful for private networks
         // private: {
         // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
